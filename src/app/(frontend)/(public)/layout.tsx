@@ -1,9 +1,14 @@
+import DemoBanner from "@/components/layout/DemoBanner";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      {/* TODO: Add Navbar component */}
+      <DemoBanner />
+      <Navbar />
       <main className="flex-1">{children}</main>
-      {/* TODO: Add Footer component */}
+      <Footer />
     </>
   );
 }
