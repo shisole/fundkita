@@ -11,8 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // TODO: Replace with your project's brand colors
-        primary: {
+        teal: {
           50: "#f0fdfa",
           100: "#ccfbf1",
           200: "#99f6e4",
@@ -24,7 +23,7 @@ const config: Config = {
           800: "#164e63",
           900: "#134e4a",
         },
-        secondary: {
+        forest: {
           50: "#f0faf4",
           100: "#dbf2e3",
           200: "#bae5cb",
@@ -36,7 +35,7 @@ const config: Config = {
           800: "#1b4e33",
           900: "#17402b",
         },
-        accent: {
+        golden: {
           50: "#fffdf0",
           100: "#fff8d4",
           200: "#ffefa8",

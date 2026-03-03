@@ -10,13 +10,13 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-400 text-white font-semibold py-3 px-6 rounded-xl transition-colors;
+    @apply bg-teal-500 hover:bg-teal-400 text-white font-semibold py-3 px-6 rounded-xl transition-colors;
   }
   .btn-secondary {
-    @apply bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors;
+    @apply bg-forest-500 hover:bg-forest-600 text-white font-semibold py-3 px-6 rounded-xl transition-colors;
   }
   .btn-outline {
-    @apply border-2 border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 font-semibold py-3 px-6 rounded-xl transition-colors;
+    @apply border-2 border-teal-500 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-teal-950 font-semibold py-3 px-6 rounded-xl transition-colors;
   }
   .card {
     @apply bg-white dark:bg-gray-900 rounded-2xl shadow-md dark:shadow-gray-950/30 hover:shadow-lg transition-shadow;

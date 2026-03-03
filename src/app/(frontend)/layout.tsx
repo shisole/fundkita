@@ -16,12 +16,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  // TODO: Update with your project's metadata
   title: {
-    default: "My App",
-    template: "%s — My App",
+    default: "FundKita — Fund for Us",
+    template: "%s — FundKita",
   },
-  description: "A modern web application built with Next.js and Supabase.",
+  description:
+    "Crowdfunding platform for the Philippines. Create campaigns, donate via GCash, Maya, and more.",
   robots: {
     index: true,
     follow: true,
@@ -30,7 +30,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${plusJakarta.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans min-h-screen flex flex-col">{children}</body>
     </html>
   );

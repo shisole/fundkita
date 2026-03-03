@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fundkita.ph";
+
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    // TODO: Update with your site URL
-    // sitemap: "https://yourdomain.com/sitemap.xml",
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }
