@@ -1,4 +1,4 @@
-export default function ParticipantLayout({ children }: { children: React.ReactNode }) {
+export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {/* TODO: Add Navbar component */}
