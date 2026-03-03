@@ -1,5 +1,28 @@
-// Barrel export for icon components
-// Add SVG icon components here and export them
-// Example:
-// export { default as HomeIcon } from "./HomeIcon";
-// export { default as SearchIcon } from "./SearchIcon";
+export { default as AlertIcon } from "./AlertIcon";
+export { default as CampaignIcon } from "./CampaignIcon";
+export { default as CheckCircleIcon } from "./CheckCircleIcon";
+export { default as ChevronDownIcon } from "./ChevronDownIcon";
+export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
+export { default as ChevronRightIcon } from "./ChevronRightIcon";
+export { default as CloseIcon } from "./CloseIcon";
+export { default as DashboardIcon } from "./DashboardIcon";
+export { default as DonateIcon } from "./DonateIcon";
+export { default as EditIcon } from "./EditIcon";
+export { default as ExternalLinkIcon } from "./ExternalLinkIcon";
+export { default as FilterIcon } from "./FilterIcon";
+export { default as FlagIcon } from "./FlagIcon";
+export { default as HeartIcon } from "./HeartIcon";
+export { default as HomeIcon } from "./HomeIcon";
+export { default as ImageIcon } from "./ImageIcon";
+export { default as LogoutIcon } from "./LogoutIcon";
+export { default as MenuIcon } from "./MenuIcon";
+export { default as PlusIcon } from "./PlusIcon";
+export { default as SearchIcon } from "./SearchIcon";
+export { default as SettingsIcon } from "./SettingsIcon";
+export { default as ShareIcon } from "./ShareIcon";
+export { default as ShieldIcon } from "./ShieldIcon";
+export { default as SortIcon } from "./SortIcon";
+export { default as SpinnerIcon } from "./SpinnerIcon";
+export { default as TrashIcon } from "./TrashIcon";
+export { default as TrophyIcon } from "./TrophyIcon";
+export { default as UserIcon } from "./UserIcon";
