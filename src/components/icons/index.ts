@@ -1,5 +1,6 @@
 export { default as AlertIcon } from "./AlertIcon";
 export { default as CampaignIcon } from "./CampaignIcon";
+export { default as CheckBadgeIcon } from "./CheckBadgeIcon";
 export { default as CheckCircleIcon } from "./CheckCircleIcon";
 export { default as ChevronDownIcon } from "./ChevronDownIcon";
 export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
@@ -26,3 +27,4 @@ export { default as SpinnerIcon } from "./SpinnerIcon";
 export { default as TrashIcon } from "./TrashIcon";
 export { default as TrophyIcon } from "./TrophyIcon";
 export { default as UserIcon } from "./UserIcon";
+export { default as UsersIcon } from "./UsersIcon";
