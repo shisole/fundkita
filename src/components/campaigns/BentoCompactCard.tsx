@@ -4,6 +4,7 @@ import Link from "next/link";
 import { type CampaignWithOrganizer } from "@/components/campaigns/CampaignCard";
 import { UsersIcon } from "@/components/icons";
 import { getCategoryMeta } from "@/lib/constants/categories";
+import { getImageUrl } from "@/lib/utils/image-url";
 
 interface BentoCompactCardProps {
   campaign: CampaignWithOrganizer;
@@ -11,6 +12,7 @@ interface BentoCompactCardProps {
 
 export default function BentoCompactCard({ campaign }: BentoCompactCardProps) {
   const categoryMeta = getCategoryMeta(campaign.category);
+  const imageUrl = getImageUrl(campaign.featured_image_url);
   const progressPercent =
     campaign.goal_amount > 0
       ? Math.min((campaign.amount_raised / campaign.goal_amount) * 100, 100)
@@ -23,9 +25,9 @@ export default function BentoCompactCard({ campaign }: BentoCompactCardProps) {
     >
       {/* Image */}
       <div className="relative aspect-[16/10] w-full overflow-hidden">
-        {campaign.featured_image_url ? (
+        {imageUrl ? (
           <Image
-            src={campaign.featured_image_url}
+            src={imageUrl}
             alt={campaign.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"

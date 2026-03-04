@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { type CampaignWithOrganizer } from "@/components/campaigns/CampaignCard";
 import DiscoverFundraisers from "@/components/campaigns/DiscoverFundraisers";
+import { HowItWorks, OriginStory, SocialProof } from "@/components/home";
 import { SearchIcon } from "@/components/icons";
 import { Button } from "@/components/ui";
 import { createClient } from "@/lib/supabase/server";
@@ -69,8 +70,15 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ── Storytelling Sections ────────────────────────────────────────────── */}
+      <OriginStory />
+      <HowItWorks />
+
       {/* ── Discover Fundraisers ─────────────────────────────────────────────── */}
       <DiscoverFundraisers campaigns={allCampaigns} />
+
+      {/* ── Social Proof ───────────────────────────────────────────────────────── */}
+      <SocialProof />
     </>
   );
 }
