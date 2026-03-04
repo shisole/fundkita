@@ -62,18 +62,9 @@
     {
       "files": ["src/components/**/*.ts", "src/components/**/*.tsx"],
       "rules": {
-        "@typescript-eslint/consistent-type-assertions": [
-          "error",
-          { "assertionStyle": "never" }
-        ]
+        "@typescript-eslint/consistent-type-assertions": ["error", { "assertionStyle": "never" }]
       }
     }
   ],
-  "ignorePatterns": [
-    "node_modules",
-    ".next",
-    "out",
-    "scripts",
-    "supabase/functions"
-  ]
+  "ignorePatterns": ["node_modules", ".next", "out", "scripts", "supabase/functions"]
 }
