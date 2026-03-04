@@ -24,7 +24,7 @@ Pre-commit hook (`husky` + `lint-staged`) automatically runs Prettier and ESLint
 ## Commands
 
 ```bash
-pnpm dev             # Start dev server (Next.js, port 3001)
+pnpm dev             # Start dev server (Next.js, port 3030)
 pnpm build           # Production build
 pnpm lint            # ESLint
 pnpm typecheck       # TypeScript type checking (tsc --noEmit)
