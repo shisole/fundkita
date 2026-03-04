@@ -35,7 +35,7 @@ export default async function SettingsPage() {
 
     const row = data?.[0];
     if (row) {
-      kycSubmission = row as typeof kycSubmission;
+      kycSubmission = row as unknown as typeof kycSubmission;
     }
   }
 

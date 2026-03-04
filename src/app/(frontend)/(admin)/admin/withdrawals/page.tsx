@@ -52,7 +52,7 @@ export default async function AdminWithdrawalsPage({ searchParams }: PageProps) 
 
   let query = supabase
     .from("withdrawal_requests")
-    .select("*, campaigns(title), users:organizer_id(full_name, email)")
+    .select("*, campaigns(title), users!withdrawal_requests_organizer_id_fkey(full_name, email)")
     .order("created_at", { ascending: false });
 
   if (statusFilter !== "all") {

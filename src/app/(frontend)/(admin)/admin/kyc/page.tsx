@@ -50,7 +50,7 @@ export default async function AdminKycPage({ searchParams }: PageProps) {
 
   let query = supabase
     .from("kyc_submissions")
-    .select("*, users(full_name, email, avatar_url)")
+    .select("*, users!kyc_submissions_user_id_fkey(full_name, email, avatar_url)")
     .order("created_at", { ascending: false });
 
   if (statusFilter !== "all") {

@@ -1,3 +1,4 @@
+import { type User } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 
 import { createClient } from "@/lib/supabase/server";
@@ -10,23 +11,35 @@ import {
 
 // ── Helper: check admin role ────────────────────────────────────────────────
 
-async function requireAdmin() {
+type AppSupabaseClient = Awaited<ReturnType<typeof createClient>>;
+
+type AdminResult =
+  | { ok: true; supabase: AppSupabaseClient; user: User }
+  | { ok: false; error: NextResponse };
+
+async function requireAdmin(): Promise<AdminResult> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return { error: NextResponse.json({ error: "Authentication required" }, { status: 401 }) };
+    return {
+      ok: false,
+      error: NextResponse.json({ error: "Authentication required" }, { status: 401 }),
+    };
   }
 
   const { data: dbUser } = await supabase.from("users").select("role").eq("id", user.id).single();
 
   if (!dbUser || (dbUser as TableRow<"users">).role !== "admin") {
-    return { error: NextResponse.json({ error: "Admin access required" }, { status: 403 }) };
+    return {
+      ok: false,
+      error: NextResponse.json({ error: "Admin access required" }, { status: 403 }),
+    };
   }
 
-  return { supabase, user };
+  return { ok: true, supabase, user };
 }
 
 // ── GET /api/admin/fraud ────────────────────────────────────────────────────
@@ -34,7 +47,7 @@ async function requireAdmin() {
 export async function GET(request: Request) {
   const result = await requireAdmin();
 
-  if ("error" in result && !("supabase" in result)) {
+  if (!result.ok) {
     return result.error;
   }
 
@@ -74,7 +87,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const result = await requireAdmin();
 
-  if ("error" in result && !("supabase" in result)) {
+  if (!result.ok) {
     return result.error;
   }
 
@@ -126,7 +139,7 @@ export async function POST(request: Request) {
 export async function PATCH(request: Request) {
   const result = await requireAdmin();
 
-  if ("error" in result && !("supabase" in result)) {
+  if (!result.ok) {
     return result.error;
   }
 

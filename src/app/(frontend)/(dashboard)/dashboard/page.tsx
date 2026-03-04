@@ -4,6 +4,7 @@ import BadgeGallery from "@/components/dashboard/BadgeGallery";
 import DonorOverview from "@/components/dashboard/DonorOverview";
 import { getCurrentUser } from "@/lib/supabase/queries";
 import { createClient } from "@/lib/supabase/server";
+import { type TableRow } from "@/lib/supabase/types";
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
@@ -15,11 +16,13 @@ export default async function DashboardPage() {
   const supabase = await createClient();
 
   // ── Fetch donor stats ──────────────────────────────────────────────────────
-  const { data: donorStats } = await supabase
+  const { data: donorStatsRaw } = await supabase
     .from("donor_stats")
     .select("*")
     .eq("user_id", user.id)
     .single();
+
+  const donorStats = donorStatsRaw as TableRow<"donor_stats"> | null;
 
   // ── Fetch recent 5 donations with campaign info ────────────────────────────
   const { data: recentDonations } = await supabase

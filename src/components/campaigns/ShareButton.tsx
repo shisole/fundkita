@@ -16,12 +16,14 @@ export default function ShareButton({ title, slug }: ShareButtonProps) {
   const handleShare = useCallback(async () => {
     const url = `${globalThis.location.origin}/campaigns/${slug}`;
 
-    if ("share" in navigator) {
+    if (navigator.share) {
       await navigator.share({ title, url });
       return;
     }
 
-    await navigator.clipboard.writeText(url);
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(url);
+    }
     setCopied(true);
     globalThis.setTimeout(() => setCopied(false), 2000);
   }, [title, slug]);
