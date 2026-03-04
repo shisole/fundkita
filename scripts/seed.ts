@@ -130,6 +130,7 @@ async function createCampaigns(
         "Maria's family needs urgent financial assistance for medical treatment. " +
         "Her mother has been diagnosed with a condition requiring specialized care. " +
         "Every contribution, no matter how small, brings us closer to getting her the help she needs.",
+      featured_image_url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
       category: "medical" as const,
       location: "Manila, Philippines",
       goal_amount: 100_000,
@@ -147,6 +148,7 @@ async function createCampaigns(
         "A devastating typhoon has displaced thousands of families in the Visayas region. " +
         "This fund provides immediate relief — food, clean water, shelter materials, and " +
         "medical supplies to those affected. Help us rebuild lives and communities.",
+      featured_image_url: "https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?w=800&q=80",
       category: "disaster_relief" as const,
       location: "Tacloban, Leyte",
       goal_amount: 500_000,
@@ -164,6 +166,7 @@ async function createCampaigns(
         "Education is the key to breaking the cycle of poverty. This campaign supports " +
         "scholarships for underprivileged students in rural Mindanao, covering tuition, " +
         "books, and school supplies for the upcoming academic year.",
+      featured_image_url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
       category: "education" as const,
       location: "Davao City, Philippines",
       goal_amount: 200_000,
@@ -181,6 +184,7 @@ async function createCampaigns(
         "Setting up a community kitchen in Tondo, Manila to serve free meals to " +
         "families in need. The kitchen will operate daily, providing nutritious food " +
         "to over 200 families. Funds cover equipment, ingredients, and volunteer supplies.",
+      featured_image_url: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80",
       category: "community" as const,
       location: "Tondo, Manila",
       goal_amount: 50_000,

@@ -10,6 +10,7 @@ import { CheckBadgeIcon, HeartIcon, UsersIcon } from "@/components/icons";
 import { Avatar, Badge, Button, ProgressBar } from "@/components/ui";
 import { getCategoryMeta } from "@/lib/constants/categories";
 import { type TableRow } from "@/lib/supabase/types";
+import { getImageUrl } from "@/lib/utils/image-url";
 
 interface CampaignDetailProps {
   campaign: TableRow<"campaigns"> & {
@@ -29,6 +30,7 @@ export default function CampaignDetail({
   showDonatedBanner,
 }: CampaignDetailProps) {
   const categoryMeta = getCategoryMeta(campaign.category);
+  const imageUrl = getImageUrl(campaign.featured_image_url);
   const progressPercent =
     campaign.goal_amount > 0 ? (campaign.amount_raised / campaign.goal_amount) * 100 : 0;
   const organizerName = campaign.users?.full_name ?? "Campaign Organizer";
@@ -50,9 +52,9 @@ export default function CampaignDetail({
         <div className="lg:col-span-2">
           {/* Featured image */}
           <div className="relative aspect-video w-full overflow-hidden rounded-xl">
-            {campaign.featured_image_url ? (
+            {imageUrl ? (
               <Image
-                src={campaign.featured_image_url}
+                src={imageUrl}
                 alt={campaign.title}
                 fill
                 className="object-cover"

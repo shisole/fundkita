@@ -6,6 +6,7 @@ import { Avatar, Badge, ProgressBar } from "@/components/ui";
 import { getCategoryMeta } from "@/lib/constants/categories";
 import { type CampaignCategory } from "@/lib/supabase/types";
 import { cn } from "@/lib/utils";
+import { getImageUrl } from "@/lib/utils/image-url";
 
 export interface CampaignWithOrganizer {
   id: string;
@@ -30,6 +31,7 @@ export default function CampaignCard({ campaign, className }: CampaignCardProps)
   const progressPercent =
     campaign.goal_amount > 0 ? (campaign.amount_raised / campaign.goal_amount) * 100 : 0;
   const organizerName = campaign.users?.full_name ?? "Anonymous";
+  const imageUrl = getImageUrl(campaign.featured_image_url);
 
   return (
     <Link
@@ -41,9 +43,9 @@ export default function CampaignCard({ campaign, className }: CampaignCardProps)
     >
       {/* Featured image */}
       <div className="relative aspect-[16/10] w-full overflow-hidden">
-        {campaign.featured_image_url ? (
+        {imageUrl ? (
           <Image
-            src={campaign.featured_image_url}
+            src={imageUrl}
             alt={campaign.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
